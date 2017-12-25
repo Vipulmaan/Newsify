@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        Newsify: Relevence
+    </title>
+
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"
+            integrity="sha384-R4/ztc4ZlRqWjqIuvf6RX5yb/v90qNGx6fS48N0tRxiGkqveZETq72KgDVJCp2TC"
+            crossorigin="anonymous"></script>
+
+    <style>
+        body{
+
+        }
+        #header{
+            background-color: black;
+            color: aqua;
+            width: 100%;
+            padding: 20px;
+            margin-top: -10px;
+            margin-left: -10px;
+            margin-bottom: 40px;
+        }
+        #search{
+            border-radius: 15px;
+            width: 600px;
+            height: 35px;
+            font-size: 30px;
+        }
+        #search:hover{
+            box-shadow: 5px 5px blue;
+        }
+        #enter{
+            border-radius: 20px;
+            width: 120px;
+            height: 42px;
+            font-size: 30px;
+            margin-left: 10px;
+        }
+        #enter:hover{
+            box-shadow: 5px 5px blue;
+        }
+        #card{
+            border-radius: 10px;
+            border: solid 2px black;
+            margin-top: 10px;
+            margin-bottom: 15px;
+            margin-left: 50px;
+            margin-right: 50px;
+            padding-left: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="header">
+    <div id="test"></div>
+    <form action="/search" method="post">
+        <input type="text" id="search" name=user[name]">
+        <button id="enter" type="submit" >Search</button>
+    </form>
+
+</div>
+<% for(x in data) {%>
+<% if(x!=0){%>
+<div id="card">
+    <img src="<%= data[x].thumbnailUrl %>" width="100px" height="100px" style=" float: right ">
+    <a href=" <%= data[x].link %> ">
+    <h1> <%= data[x].title %> </h1> </a>
+    <p> <%= data[x].description %> </p>
+    <p>Publish Time:  <%= data[1].pubDate %> </p>
+</div>
+<% }} %>
+
+</body>
+</html>
