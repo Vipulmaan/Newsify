@@ -18,7 +18,7 @@ app.use(bodyParser.json());
 const GoogleNewsRss = require('google-news-rss');
 
 const googleNews = new GoogleNewsRss();
-
+//get ----------
 app.get('/',function(req, res){
 
      googleNews
